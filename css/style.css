@@ -629,7 +629,7 @@ tr:hover {
 }
 
 footer {
-    background-color: #1a1a1a;
+    background-color: #0b0e2a;
     color: var(--white);
     text-align: center;
     padding: 2.5rem 1.5rem;
@@ -687,8 +687,14 @@ footer a {
         z-index: 1000;
     }
 
+    nav ul.mobile-menu {
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
     nav ul.show {
-        max-height: 420px;
+        max-height: calc(100vh - 70px);
         opacity: 1;
         pointer-events: auto;
         visibility: visible;

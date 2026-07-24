@@ -14,11 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const closeMenu = () => {
             navLinks.classList.remove('show');
+            menuBtn.classList.remove('active');
             menuBtn.setAttribute('aria-expanded', 'false');
         };
 
         const openMenu = () => {
             navLinks.classList.add('show');
+            menuBtn.classList.add('active');
             menuBtn.setAttribute('aria-expanded', 'true');
         };
 
