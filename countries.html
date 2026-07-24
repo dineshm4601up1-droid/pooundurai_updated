@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24 நாடுகள் & பட்டங்கள் - ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Embedded Stylesheet -->
+    <style>
+        :root {
+            --primary: #8b0000;      /* Deep Temple Maroon */
+            --secondary: #d4af37;    /* Temple Gold */
+            --accent: #e67e22;       /* Warm Sunset Orange */
+            --bg-light: #fffcf5;     /* Soft Off-White */
+            --text-dark: #222222;
+            --text-muted: #666666;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Mukta Malar', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 4px solid var(--secondary);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .brand-logo h1 {
+            font-size: 1.35rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .brand-logo p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.3rem 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--secondary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* --- Layout & Main Content --- */
+        main {
+            flex: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .page-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            display: inline-block;
+        }
+
+        .page-title h2::after {
+            content: '❋';
+            display: block;
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-top: 0.2rem;
+        }
+
+        .section-block {
+            margin-bottom: 3.5rem;
+        }
+
+        .section-heading {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 0.5rem;
+        }
+
+        /* --- Pattangangal List --- */
+        .pattam-list {
+            background: var(--white);
+            padding: 1.8rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary);
+            list-style: none;
+        }
+
+        .pattam-list > li {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--text-dark);
+        }
+
+        .pattam-list ul {
+            list-style: none;
+            margin-left: 1.8rem;
+            margin-top: 0.4rem;
+        }
+
+        .pattam-list ul li {
+            font-size: 1rem;
+            font-weight: normal;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .pattam-list ul li::before {
+            content: '➔';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+
+        /* --- Tables --- */
+        .table-container {
+            overflow-x: auto;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 1rem 1.2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #fcf8f0;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+
+        tr:hover {
+            background-color: #fff9f0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1a1a1a;
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-top: 4px solid var(--secondary);
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 850px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: var(--primary);
+                padding: 1.5rem;
+                box-shadow: var(--shadow);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            th, td {
+                padding: 0.8rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="brand-logo">
+                <h1>ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</h1>
+                <p>அவல்பூந்துறை, ஈரோடு</p>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">முகப்பு</a></li>
+                    <li><a href="history.html">வரலாறு</a></li>
+                    <li><a href="timings.html">பூஜை & விசேஷங்கள்</a></li>
+                    <li><a href="countries.html" class="active">24 நாடுகள்</a></li>
+                    <li><a href="gallery.html">தரிசனம்</a></li>
+                    <li><a href="contact.html">தொடர்புக்கு</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <!-- 1. மூன்று பட்டங்கள் -->
+        <div class="section-block">
+            <h3 class="section-heading">👑 மூன்று பட்டங்கள்</h3>
+            <ul class="pattam-list">
+                <li>1. ஊத்தலூர் பட்டம்</li>
+                <li>2. தாராபுரம் பட்டம் – அண்டநாடு</li>
+                <li>
+                    3. ஈரோடு பட்டம்
+                    <ul>
+                        <li>பொன்குலிக்கி நாடு</li>
+                        <li>பூந்துறை நாடு (அவல்பூந்துறை 14 கெடிக்கு உட்பட்டது)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 2. 8 ஊர் மற்றும் கோத்திரம் -->
+        <div class="section-block">
+            <h3 class="section-heading">🏛️ 8 ஊர் & கோத்திரம்</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">எண்</th>
+                            <th style="width: 45%;">ஊர்</th>
+                            <th style="width: 45%;">கோத்திரம்</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>வெள்ளார நாடு</td><td>ததீத ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>2</td><td>பருத்திப்பள்ளி நாடு</td><td>வசிஷ்ட ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>3</td><td>குயிலிக்கோணி நாடு</td><td>பதஞ்சலி மகரிஷி கோத்திரம்</td></tr>
+                        <tr><td>4</td><td>திருச்செங்கோடு நாடு</td><td>மதங்க ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>5</td><td>மோரூர் நாடு</td><td>புரத்துவாச ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>6</td><td>பூளைவாடி நாடு</td><td>வான்மீக ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>7</td><td>சாமக்குளம் (கமுசல நாடு)</td><td>கனக ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>8</td><td>அன்னியூர் மன்னி நாடு</td><td>வியாக்கிரம ரிஷி கோத்திரம்</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 3. கொங்கு குலாளர் 24 நாடுகள் மற்றும் கோத்திரம் -->
+        <div class="section-block">
+            <h3 class="section-heading">🛕 கொங்கு குலாளர் 24 நாடுகள் & கோத்திரம்</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 10%;">எண்</th>
+                            <th style="width: 45%;">நாடு</th>
+                            <th style="width: 45%;">கோத்திரம்</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>பூந்துறை நாடு</td><td>வியாச ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>2</td><td>தேங்கரசு நாடு</td><td>காசிப ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>3</td><td>ஆறுநாடு</td><td>மார்க்கண்ட ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>4</td><td>தலையநாடு</td><td>கார்க்கேய ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>5</td><td>காங்கேய நாடு</td><td>கலைக்கோட்டு மகரிஷி கோத்திரம்</td></tr>
+                        <tr><td>6</td><td>வேங்கல நாடு</td><td>பராச ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>7</td><td>தட்டைய நாடு</td><td>ரோம ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>8</td><td>அண்டநாடு</td><td>சவுனக ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>9</td><td>வையாபுரி நாடு</td><td>கவுசிக ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>10</td><td>புகழ்வாரக்க நாடு</td><td>கலின ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>11</td><td>நல்லுருக்க நாடு</td><td>பிருகு ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>12</td><td>பொன்குலிக்கி நாடு</td><td>கௌதம ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>13</td><td>பூவானி நாடு</td><td>மரிசி ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>14</td><td>ராசிபுர நாடு</td><td>அத்தி ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>15</td><td>நரையநாடு</td><td>தைத்தி ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>16</td><td>வடகரை நாடு</td><td>போதக ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>17</td><td>குருப்ப நாடு</td><td>வருக ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>18</td><td>அரையநாடு</td><td>நாரத ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>19</td><td>மணநாடு (மணல் நாடு)</td><td>எவுன ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>20</td><td>கிழங்கு நாடு</td><td>மனுவக்கியான ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>21</td><td>வாழவந்தி நாடு</td><td>அங்கிராம ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>22</td><td>காஞ்சிக்கோயில் நாடு</td><td>சுகப்பிரம ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>23</td><td>காவடிக்க நாடு</td><td>புலக ரிஷி கோத்திரம்</td></tr>
+                        <tr><td>24</td><td>ஆனைமலை நாடு</td><td>குச்சக ரிஷி கோத்திரம்</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p><strong>ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</strong> - அவல்பூந்துறை, ஈரோடு</p>
+        <p>&copy; <span id="current-year">2026</span> ஸ்ரீ பெரியகாண்டி அம்மன் கோவில். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+        <p><small>Developed by <a href="https://alphainfotech.org" target="_blank" rel="noopener">alphainfotech.org</a></small></p>
+    </footer>
+
+    <!-- Inline JavaScript -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('show');
+        }
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

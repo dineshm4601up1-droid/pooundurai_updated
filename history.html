@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>வரலாறு - ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Embedded Stylesheet -->
+    <style>
+        :root {
+            --primary: #8b0000;      /* Deep Temple Maroon */
+            --secondary: #d4af37;    /* Temple Gold */
+            --accent: #e67e22;       /* Warm Sunset Orange */
+            --bg-light: #fffcf5;     /* Soft Off-White */
+            --text-dark: #222222;
+            --text-muted: #666666;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Mukta Malar', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 4px solid var(--secondary);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .brand-logo h1 {
+            font-size: 1.35rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .brand-logo p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.3rem 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--secondary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* --- Layout & Content --- */
+        main {
+            flex: 1;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .page-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            display: inline-block;
+        }
+
+        .page-title h2::after {
+            content: '❋';
+            display: block;
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-top: 0.2rem;
+        }
+
+        .intro-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--secondary);
+            font-size: 1.15rem;
+            line-height: 2;
+            margin-bottom: 3.5rem;
+        }
+
+        /* --- Timeline Component --- */
+        .timeline {
+            position: relative;
+            padding: 1rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-left: 60px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-badge {
+            position: absolute;
+            left: 3px;
+            top: 0;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: 3px solid var(--secondary);
+            box-shadow: var(--shadow);
+            z-index: 2;
+        }
+
+        .timeline-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 1.8rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--primary);
+        }
+
+        .year-tag {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--secondary);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-title {
+            color: var(--primary);
+            font-size: 1.35rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        .event-details {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .event-details li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .event-details li::before {
+            content: '❖';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+
+        .date-highlight {
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1a1a1a;
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-top: 4px solid var(--secondary);
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 850px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: var(--primary);
+                padding: 1.5rem;
+                box-shadow: var(--shadow);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .intro-card {
+                padding: 1.5rem;
+                font-size: 1.05rem;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-item {
+                padding-left: 48px;
+            }
+
+            .timeline-badge {
+                left: -2px;
+                width: 34px;
+                height: 34px;
+                font-size: 0.95rem;
+            }
+
+            .timeline-card {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="brand-logo">
+                <h1>ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</h1>
+                <p>அவல்பூந்துறை, ஈரோடு</p>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">முகப்பு</a></li>
+                    <li><a href="history.html" class="active">வரலாறு</a></li>
+                    <li><a href="timings.html">பூஜை & விசேஷங்கள்</a></li>
+                    <li><a href="countries.html">24 நாடுகள்</a></li>
+                    <li><a href="gallery.html">தரிசனம்</a></li>
+                    <li><a href="contact.html">தொடர்புக்கு</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Overview -->
+        <div class="page-title">
+            <h2>பெரியகாண்டி அம்மன் வரலாறு</h2>
+        </div>
+        <div class="intro-card">
+            <p>
+பெரியகாண்டியம்மன், பார்வதி தேவியின் அவதாரமாக கருதப்படுகிறார். கைலாயத்தில் குழந்தை இல்லாமல் தவமிருந்த ஐந்து தலை நாகத்தின் வேண்டுகோளுக்கிணங்கி, சிவபெருமான் பார்வதியை அந்த நாகத்திற்கு மகளாகப் பிறக்க அருள்கிறார். நாகம் அவளை அன்புடன் பெரியக்கா / பெரியகாண்டி என்று அழைத்து வளர்க்கிறது.
+      பின்னர் சிவபெருமான், பெரியகாண்டியம்மனையும் ஏழு கன்னியரையும் பூலோகத்தில் உள்ள வீரமலைக்காட்டில் கடும் தவம் செய்ய அனுப்புகிறார். அவர்கள் பயணத்தின் போது தொட்டியம் காவிரி கரையில் பூஜைக்காக மண் கலசங்கள் கேட்க, மண்ணுடையான் மறுக்கிறான். <br><br>அம்மனின் அருளால் அவன் பானைகளில் நாகங்கள் தோன்ற, தனது தவறை உணர்ந்து மன்னிப்பு கேட்டு மண் கலசங்களை வழங்குகிறான். அம்மனும் அவனை ஆசீர்வதித்து, அவன் வம்சம் வளரும் என்று அருள் புரிகிறார்.
+
+காவிரியைக் கடக்கும் போது செல்லாண்டியம்மன் பெரியகாண்டியம்மனை சவால் விடுகிறார். இருவரும் தங்கள் கரகங்களை ஆற்றில் விடுகின்றனர். செல்லாண்டியம்மனின் பொன் கரகம் மூழ்க, பெரியகாண்டியம்மனின் மண் கரகம் திருப்பாற்கடல் சென்று மீண்டும் திரும்பி வருகிறது. இதன் மூலம் பெரியகாண்டியம்மன் வெற்றி பெறுகிறார். இந்த நிகழ்வை நினைவுகூரும் வகையில் இன்றும் தொட்டியம் காவிரியில் கரகம் விடும் திருவிழா நடைபெறுகிறது.
+
+<br><br>அதன்பின் பெரியகாண்டியம்மன் வீரமலைக்காட்டில் தவத்தை நிறைவு செய்கிறார். அதே காலத்தில் பொன்னர், சங்கர் வீரமரணம் அடைகிறார்கள். பின்னர் பொன்னர், சங்கர், அருக்காணித்தங்கம், ஏழு கன்னியர் ஆகியோர் பெரியகாண்டியம்மனுடன் கைலாயம் செல்கின்றனர்.
+
+<br><br>இந்த வரலாற்றின் காரணமாக, குறிப்பாக கொங்குக் குலாலர் சமூகத்தினர் பெரியகாண்டியம்மனையும் அண்ணமார்களையும் குலதெய்வமாக வழிபடுகின்றனர். அவர்களின் குழந்தைகளுக்கு பெரியண்ணன், சின்னண்ணன், பொன்னர், சங்கர், பெரியக்கா, தாமரையாள், அருக்காணி, தங்காயி, முத்தாயி, பவளாயி போன்ற தெய்வப் பெயர்களைச் சூட்டி வழிபடும் மரபு இன்றும் தொடர்கிறது. பெரியகாண்டியம்மன் அருளால் அனைவரும் நலமும் வளமும் பெறுவார்கள் என்பது பக்தர்களின் நம்பிக்கையாகும்.
+      </p>
+            <br>
+           
+        </div>
+
+        <!-- Historical Events Timeline -->
+        <div class="page-title">
+            <h2>முக்கிய நிகழ்வுகள் & வரலாற்று மைல்கற்கள்</h2>
+        </div>
+
+        <div class="timeline">
+
+            <!-- 2000 Event -->
+            <div class="timeline-item">
+                <div class="timeline-badge">🛕</div>
+                <div class="timeline-card">
+                    <span class="year-tag">2000</span>
+                    <h3 class="event-title">முதல் மஹா கும்பாபிஷேகம்</h3>
+                    <ul class="event-details">
+                        <li><span class="date-highlight">தேதி:</span> 19.01.2000</li>
+                        <li>அஷ்டபந்தன மஹா கும்பாபிஷேகம் சிறப்பாக நடைபெற்றது.</li>
+                        <li>அவல்பூந்துறை பெரியகாண்டியம்மன் திருக்கோயிலின் முக்கிய மைல்கல்.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2007 Event -->
+            <div class="timeline-item">
+                <div class="timeline-badge">🌾</div>
+                <div class="timeline-card">
+                    <span class="year-tag">2007</span>
+                    <h3 class="event-title">பெரும் பொங்கல் விழா</h3>
+                    <ul class="event-details">
+                        <li><span class="date-highlight">தேதி:</span> 03–04.02.2007</li>
+                        <li>இரண்டு நாட்கள் சிறப்பு வழிபாடு, அபிஷேகம், அன்னதானம் மற்றும் பக்தர்கள் பங்கேற்புடன் நடைபெற்றது.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2008 Event -->
+            <div class="timeline-item">
+                <div class="timeline-badge">🛞</div>
+                <div class="timeline-card">
+                    <span class="year-tag">2008</span>
+                    <h3 class="event-title">புதிய திருத்தேர் (ரதம்) & வெள்ளோட்டம்</h3>
+                    <ul class="event-details">
+                        <li><span class="date-highlight">தேதி:</span> 20.04.2008</li>
+                        <li>புதிய ரதத்திற்கு கும்பாபிஷேகம் செய்து முதல் வெள்ளோட்டம் நடத்தப்பட்டது.</li>
+                        <li>அதன்பின் ஒவ்வொரு பௌர்ணமி மற்றும் அமாவாசையிலும் ரத உற்சவம் மற்றும் அன்னதானம் நடைபெற்று வருகிறது.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2013 Event -->
+            <div class="timeline-item">
+                <div class="timeline-badge">🛕</div>
+                <div class="timeline-card">
+                    <span class="year-tag">2013</span>
+                    <h3 class="event-title">இரண்டாவது மஹா கும்பாபிஷேகம்</h3>
+                    <ul class="event-details">
+                        <li><span class="date-highlight">தேதி:</span> 23.01.2013</li>
+                        <li>அஷ்டபந்தன (சொர்ணபந்தன) மஹா கும்பாபிஷேகம் வேத மந்திரங்களுடன் நடைபெற்றது.</li>
+                        <li>திருக்கோயில் புனரமைப்பு பணிகள் நிறைவடைந்தன.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2014-2015 Event -->
+            <div class="timeline-item">
+                <div class="timeline-badge">🌺</div>
+                <div class="timeline-card">
+                    <span class="year-tag">2014 – 2015</span>
+                    <h3 class="event-title">கோடி அர்ச்சனை</h3>
+                    <ul class="event-details">
+                        <li><span class="date-highlight">காலம்:</span> 23.10.2014 – 31.01.2015</li>
+                        <li>தொடர்ந்து 100 நாட்கள் தினமும் ஒரு லட்சம் அர்ச்சனை செய்யப்பட்டது.</li>
+                        <li>மொத்தம் ஒரு கோடி அர்ச்சனைகள் ஸ்ரீ பெரியகாண்டியம்மனுக்கு சமர்ப்பிக்கப்பட்டன.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2017 Event -->
+            <div class="timeline-item">
+                <div class="timeline-badge">🏛️</div>
+                <div class="timeline-card">
+                    <span class="year-tag">2017</span>
+                    <h3 class="event-title">வீரப்பூர் கருங்கல் ஆலய கும்பாபிஷேகம்</h3>
+                    <ul class="event-details">
+                        <li><span class="date-highlight">தேதி:</span> 14.06.2017</li>
+                        <li>கொங்கு குலாளர் பூந்துறை நாடு 14 (எ) 37 பூசாரியார் மற்றும் அண்ணன்மார்களின் பங்களிப்பில் கருங்கல்லால் புதிய ஆலயம் கட்டப்பட்டது.</li>
+                        <li>ஆலயத்திற்கு மஹா கும்பாபிஷேகம் சிறப்பாக நடைபெற்றது.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2025 Event -->
+            <div class="timeline-item">
+                <div class="timeline-badge">✨</div>
+                <div class="timeline-card">
+                    <span class="year-tag">2025</span>
+                    <h3 class="event-title">மூன்றாவது மஹா கும்பாபிஷேகம்</h3>
+                    <ul class="event-details">
+                        <li><span class="date-highlight">தேதி:</span> 02.02.2025</li>
+                        <li>கோயில் புனரமைப்பு, வர்ண வேலைகள் மற்றும் திருப்பணிகள் நிறைவடைந்த பின் நடைபெற்றது.</li>
+                        <li>அஷ்டபந்தன (சொர்ணபந்தன) மஹா கும்பாபிஷேகம் சிறப்பாக நடைபெற்றது.</li>
+                        <li>இலட்சக்கணக்கான பக்தர்கள் கலந்து கொண்டு அன்னையின் அருளைப் பெற்றனர்.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p><strong>ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</strong> - அவல்பூந்துறை, ஈரோடு</p>
+        <p>&copy; <span id="current-year">2026</span> ஸ்ரீ பெரியகாண்டி அம்மன் கோவில். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+        <p><small>Developed by <a href="https://alphainfotech.org" target="_blank" rel="noopener">alphainfotech.org</a></small></p>
+    </footer>
+
+    <!-- Inline JavaScript -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('show');
+        }
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

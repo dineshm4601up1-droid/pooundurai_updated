@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>தொடர்புக்கு - ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Embedded Stylesheet -->
+    <style>
+        :root {
+            --primary: #8b0000;      /* Deep Temple Maroon */
+            --secondary: #d4af37;    /* Temple Gold */
+            --accent: #e67e22;       /* Warm Sunset Orange */
+            --bg-light: #fffcf5;     /* Soft Off-White */
+            --text-dark: #222222;
+            --text-muted: #666666;
+            --white: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --border-radius: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Mukta Malar', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--primary);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 4px solid var(--secondary);
+            box-shadow: var(--shadow);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .brand-logo h1 {
+            font-size: 1.35rem;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .brand-logo p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 0.3rem 0;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--secondary);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary);
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        /* --- Layout & Main Content --- */
+        main {
+            flex: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .page-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            display: inline-block;
+        }
+
+        .page-title h2::after {
+            content: '❋';
+            display: block;
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-top: 0.2rem;
+        }
+
+        /* --- Grid & Cards --- */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            border-top: 4px solid var(--secondary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #1a1a1a;
+            color: var(--white);
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            border-top: 4px solid var(--secondary);
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        /* --- Responsive Styles --- */
+        @media (max-width: 850px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: var(--primary);
+                padding: 1.5rem;
+                box-shadow: var(--shadow);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="brand-logo">
+                <h1>ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</h1>
+                <p>அவல்பூந்துறை, ஈரோடு</p>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="index.html">முகப்பு</a></li>
+                    <li><a href="history.html">வரலாறு</a></li>
+                    <li><a href="timings.html">பூஜை & விசேஷங்கள்</a></li>
+                    <li><a href="countries.html">24 நாடுகள்</a></li>
+                    <li><a href="gallery.html">தரிசனம்</a></li>
+                    <li><a href="contact.html" class="active">தொடர்புக்கு</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-title">
+            <h2>தொடர்புக்கு அழையுங்கள்</h2>
+        </div>
+
+        <div class="grid-3">
+            <div class="card" style="text-align: center;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">📍 முகவரி</h3>
+                <p>ஈரோடு - தாராபுரம் சாலை,<br>அவல்பூந்துறை,<br>ஈரோடு - 638115, தமிழ்நாடு.</p>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">📞 தொலைபேசி</h3>
+                <p style="font-size: 1.2rem; font-weight: bold;">+91 99999 99999</p>
+                <p style="color: var(--text-muted); margin-top: 0.5rem; font-size: 0.9rem;">
+                    அழைக்க கிடைக்கும் நேரம்: காலை 6:00 - இரவு 9:00
+                </p>
+            </div>
+
+            
+        </div>
+    </main>
+
+    <footer>
+        <p><strong>ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</strong> - அவல்பூந்துறை, ஈரோடு</p>
+        <p>&copy; <span id="current-year">2026</span> ஸ்ரீ பெரியகாண்டி அம்மன் கோவில். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+        <p><small>Developed by <a href="https://alphainfotech.org" target="_blank" rel="noopener">alphainfotech.org</a></small></p>
+    </footer>
+
+    <!-- Inline JavaScript for Menu and Year -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('show');
+        }
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
