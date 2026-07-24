@@ -4,161 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ஸ்ரீ பெரியகாண்டி அம்மன் கோவில் - அவல்பூந்துறை</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #8b0000;
-            --secondary: #d4af37;
-            --accent: #e67e22;
-            --bg-light: #fffcf5;
-            --text-dark: #222222;
-            --text-muted: #666666;
-            --white: #ffffff;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --border-radius: 8px;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Mukta Malar', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.7;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        header {
-            background-color: var(--primary);
-            color: var(--white);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 4px solid var(--secondary);
-            box-shadow: var(--shadow);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-        }
-
-        .brand-logo h1 { font-size: 1.35rem; color: var(--secondary); font-weight: 700; }
-        .brand-logo p { font-size: 0.85rem; opacity: 0.9; }
-
-        nav ul { display: flex; list-style: none; gap: 1.5rem; }
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 0.3rem 0;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        nav a:hover, nav a.active { color: var(--secondary); }
-        nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--secondary);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--secondary);
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        main { flex: 1; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
-
-        .page-title { text-align: center; margin-bottom: 2.5rem; }
-        .page-title h2 { font-size: 2.2rem; color: var(--primary); display: inline-block; }
-        .page-title h2::after {
-            content: '❋';
-            display: block;
-            font-size: 1.2rem;
-            color: var(--secondary);
-            margin-top: 0.2rem;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(139, 0, 0, 0.8), rgba(0, 0, 0, 0.75)), 
-                        url('https://images.unsplash.com/photo-1542332213-9b5a5a3fad35?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            color: var(--white);
-            text-align: center;
-            padding: 6rem 1.5rem;
-        }
-
-        .hero h2 { font-size: 2.5rem; color: var(--secondary); margin-bottom: 0.8rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
-        .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-
-        .btn-primary {
-            display: inline-block;
-            background-color: var(--secondary);
-            color: var(--primary);
-            padding: 0.8rem 2rem;
-            border-radius: 30px;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s;
-            box-shadow: var(--shadow);
-        }
-
-        .btn-primary:hover { background-color: #f1c40f; transform: translateY(-2px); }
-
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .card { background: var(--white); padding: 2rem; border-radius: var(--border-radius); box-shadow: var(--shadow); border-top: 4px solid var(--secondary); }
-        .timing-card { text-align: center; }
-        .timing-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
-        .timing-card .time { font-size: 1.6rem; font-weight: bold; color: var(--accent); }
-
-        footer {
-            background-color: #1a1a1a;
-            color: var(--white);
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            border-top: 4px solid var(--secondary);
-            margin-top: auto;
-        }
-
-        footer p { font-size: 0.95rem; margin-bottom: 0.5rem; }
-        footer a { color: var(--secondary); text-decoration: none; }
-
-        @media (max-width: 850px) {
-            .mobile-menu-btn { display: block; }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background-color: var(--primary);
-                padding: 1.5rem;
-                box-shadow: var(--shadow);
-            }
-            nav ul.show { display: flex; }
-            .hero h2 { font-size: 1.8rem; }
-            .hero p { font-size: 1rem; }
-        }
-    </style>
 </head>
 <body>
 
@@ -168,13 +17,14 @@
                 <h1>ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</h1>
                 <p>அவல்பூந்துறை, ஈரோடு</p>
             </div>
-            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <button class="mobile-menu-btn" id="menu-btn" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu">☰</button>
             <nav>
                 <ul id="nav-links">
                     <li><a href="index.html" class="active">முகப்பு</a></li>
                     <li><a href="history.html">வரலாறு</a></li>
                     <li><a href="timings.html">பூஜை & விசேஷங்கள்</a></li>
                     <li><a href="countries.html">24 நாடுகள்</a></li>
+                    <li><a href="admin.html">நிர்வாகம்</a></li>
                     <li><a href="gallery.html">புகைப்படங்கள்</a></li>
                     <li><a href="contact.html">தொடர்புக்கு</a></li>
                 </ul>
@@ -186,7 +36,7 @@
         <section class="hero">
             <h2>அருள்மிகு ஸ்ரீ பெரியகாண்டி அம்மன் திருத்தலம்</h2>
             <p>கொங்கு மண்டல மக்களின் குலதெய்வமாக விளங்கும் சக்தி தேவி</p>
-            <a href="contact.html" class="btn-primary">தரிசன நேரம் & முகவரி</a>
+            <a href="contact.html" class="btn-primary">தொடர்புக்கு</a>
         </section>
 
         <section class="container">
@@ -216,10 +66,6 @@
         <p><small>Developed by <a href="https://alphainfotech.org" target="_blank" rel="noopener">alphainfotech.org</a></small></p>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById('nav-links').classList.toggle('show');
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

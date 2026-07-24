@@ -4,286 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>திவ்ய தரிசனம் - ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</title>
+    <link rel="stylesheet" href="css/style.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Embedded Stylesheet -->
-    <style>
-        :root {
-            --primary: #8b0000;      /* Deep Temple Maroon */
-            --secondary: #d4af37;    /* Temple Gold */
-            --accent: #e67e22;       /* Warm Sunset Orange */
-            --bg-light: #fffcf5;     /* Soft Off-White */
-            --text-dark: #222222;
-            --text-muted: #666666;
-            --white: #ffffff;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --border-radius: 8px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Mukta Malar', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.7;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* --- Header & Navigation --- */
-        header {
-            background-color: var(--primary);
-            color: var(--white);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 4px solid var(--secondary);
-            box-shadow: var(--shadow);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-        }
-
-        .brand-logo h1 {
-            font-size: 1.35rem;
-            color: var(--secondary);
-            font-weight: 700;
-        }
-
-        .brand-logo p {
-            font-size: 0.85rem;
-            opacity: 0.9;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 0.3rem 0;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        nav a:hover,
-        nav a.active {
-            color: var(--secondary);
-        }
-
-        nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--secondary);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--secondary);
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        /* --- Layout & Content --- */
-        main {
-            flex: 1;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
-
-        .page-title {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-
-        .page-title h2 {
-            font-size: 2.2rem;
-            color: var(--primary);
-            display: inline-block;
-        }
-
-        .page-title h2::after {
-            content: '❋';
-            display: block;
-            font-size: 1.2rem;
-            color: var(--secondary);
-            margin-top: 0.2rem;
-        }
-
-        /* --- Gallery Grid: Fixed 3 photos per row --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 Columns per row */
-            gap: 1.8rem;
-        }
-
-        .gallery-item {
-            height: 260px;
-            background-color: #f5efe6;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            border: 2px solid var(--secondary);
-            overflow: hidden;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.08);
-        }
-
-        .gallery-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(139, 0, 0, 0.85);
-            color: var(--white);
-            padding: 0.6rem 1rem;
-            font-size: 0.95rem;
-            text-align: center;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover .gallery-caption {
-            transform: translateY(0);
-        }
-
-        /* --- Fullscreen Lightbox Modal --- */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .lightbox-modal.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 85vh;
-            border-radius: var(--border-radius);
-            border: 3px solid var(--secondary);
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: var(--white);
-            font-size: 2.5rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.2s;
-        }
-
-        .lightbox-close:hover {
-            color: var(--secondary);
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #1a1a1a;
-            color: var(--white);
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            border-top: 4px solid var(--secondary);
-            margin-top: auto;
-        }
-
-        footer p {
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
-        }
-
-        footer a {
-            color: var(--secondary);
-            text-decoration: none;
-        }
-
-        /* --- Responsive View --- */
-        @media (max-width: 900px) {
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
-            }
-        }
-
-        @media (max-width: 600px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            nav ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background-color: var(--primary);
-                padding: 1.5rem;
-                box-shadow: var(--shadow);
-            }
-
-            nav ul.show {
-                display: flex;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr; /* 1 per row on mobile phones */
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -293,13 +20,14 @@
                 <h1>ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</h1>
                 <p>அவல்பூந்துறை, ஈரோடு</p>
             </div>
-            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <button class="mobile-menu-btn" id="menu-btn" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu">☰</button>
             <nav>
                 <ul id="nav-links">
                     <li><a href="index.html">முகப்பு</a></li>
                     <li><a href="history.html">வரலாறு</a></li>
                     <li><a href="timings.html">பூஜை & விசேஷங்கள்</a></li>
                     <li><a href="countries.html">24 நாடுகள்</a></li>
+                    <li><a href="admin.html">நிர்வாகம்</a></li>
                     <li><a href="gallery.html" class="active">புகைப்படங்கள்</a></li>
                     <li><a href="contact.html">தொடர்புக்கு</a></li>
                 </ul>
@@ -313,27 +41,27 @@
         </div>
 
         <div class="gallery-grid">
-            <div class="gallery-item" onclick="openLightbox(this)">
+            <div class="gallery-item">
                 <img src="assets/temple-1.jpg" alt="கோவில் ராஜகோபுரம்" loading="lazy" onerror="this.onerror=null; this.parentElement.innerText='கோவில் புகைப்படம் 1';">
                 <div class="gallery-caption">கோவில் புகைப்படம் 1</div>
             </div>
 
-            <div class="gallery-item" onclick="openLightbox(this)">
+            <div class="gallery-item">
                 <img src="assets/temple-2.jpg" alt="ஸ்ரீ பெரியகாண்டி அம்மன் அலங்காரம்" loading="lazy" onerror="this.onerror=null; this.parentElement.innerText='கோவில் புகைப்படம் 2';">
                 <div class="gallery-caption">கோவில் புகைப்படம் 2</div>
             </div>
 
-            <div class="gallery-item" onclick="openLightbox(this)">
+            <div class="gallery-item">
                 <img src="assets/temple-3.jpg" alt="திருக்கோவில் மூலஸ்தானம்" loading="lazy" onerror="this.onerror=null; this.parentElement.innerText='கோவில் புகைப்படம் 3';">
                 <div class="gallery-caption">கோவில் புகைப்படம் 3</div>
             </div>
 
-            <div class="gallery-item" onclick="openLightbox(this)">
+            <div class="gallery-item">
                 <img src="assets/temple-4.jpg" alt="திருத்தேர் (ரதம்) உற்சவம்" loading="lazy" onerror="this.onerror=null; this.parentElement.innerText='கோவில் புகைப்படம் 4';">
                 <div class="gallery-caption">கோவில் புகைப்படம் 4</div>
             </div>
 
-            <div class="gallery-item" onclick="openLightbox(this)">
+            <div class="gallery-item">
                 <img src="assets/temple-5.jpg" alt="மஹா கும்பாபிஷேகம் விழா" loading="lazy" onerror="this.onerror=null; this.parentElement.innerText='கோவில் புகைப்படம் 5';">
                 <div class="gallery-caption">கோவில் புகைப்படம் 5</div>
             </div>
@@ -341,7 +69,7 @@
     </main>
 
     <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox-modal" onclick="closeLightbox()">
+    <div id="lightbox" class="lightbox-modal">
         <span class="lightbox-close">&times;</span>
         <img id="lightbox-img" class="lightbox-content" src="" alt="Full View">
     </div>
@@ -352,26 +80,6 @@
         <p><small>Developed by <a href="https://alphainfotech.org" target="_blank" rel="noopener">alphainfotech.org</a></small></p>
     </footer>
 
-    <!-- Inline JavaScript -->
-    <script>
-        function toggleMenu() {
-            document.getElementById('nav-links').classList.toggle('show');
-        }
-
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-
-        // Lightbox Functions
-        function openLightbox(element) {
-            const img = element.querySelector('img');
-            if (img && img.src) {
-                document.getElementById('lightbox-img').src = img.src;
-                document.getElementById('lightbox').classList.add('active');
-            }
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

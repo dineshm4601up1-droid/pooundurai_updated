@@ -4,198 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>பூஜை & விசேஷ நாட்கள் - ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <style>
-        :root {
-            --primary: #8b0000;
-            --secondary: #d4af37;
-            --accent: #e67e22;
-            --bg-light: #fffcf5;
-            --text-dark: #222222;
-            --text-muted: #666666;
-            --white: #ffffff;
-            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --border-radius: 8px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Mukta Malar', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            line-height: 1.7;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        /* --- Header Navigation --- */
-        header {
-            background-color: var(--primary);
-            color: var(--white);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 4px solid var(--secondary);
-            box-shadow: var(--shadow);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-        }
-
-        .brand-logo h1 {
-            font-size: 1.35rem;
-            color: var(--secondary);
-            font-weight: 700;
-        }
-
-        .brand-logo p {
-            font-size: 0.85rem;
-            opacity: 0.9;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 0.3rem 0;
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--secondary);
-        }
-
-        nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: var(--secondary);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--secondary);
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        /* --- Main Content --- */
-        main { flex: 1; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 3rem 1.5rem; }
-
-        .page-title { text-align: center; margin-bottom: 2.5rem; }
-        .page-title h2 { font-size: 2.2rem; color: var(--primary); display: inline-block; }
-        .page-title h2::after {
-            content: '❋';
-            display: block;
-            font-size: 1.2rem;
-            color: var(--secondary);
-            margin-top: 0.2rem;
-        }
-
-        /* --- Daily Pooja Cards --- */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .timing-card {
-            background: var(--white);
-            text-align: center;
-            padding: 2rem;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            border-top: 4px solid var(--secondary);
-        }
-
-        .timing-card h3 { color: var(--primary); margin-bottom: 0.5rem; }
-        .timing-card .time { font-size: 1.6rem; font-weight: bold; color: var(--accent); }
-
-        /* --- Full Tables --- */
-        .table-container {
-            overflow-x: auto;
-            background: var(--white);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            margin-bottom: 2.5rem;
-        }
-
-        .table-heading {
-            background-color: var(--primary);
-            color: var(--secondary);
-            padding: 1.2rem;
-            font-size: 1.2rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        table { width: 100%; border-collapse: collapse; text-align: left; }
-        th, td { padding: 1rem; border-bottom: 1px solid #eee; }
-        th { background-color: #fcf8f0; color: var(--primary); font-weight: 700; }
-        tr:hover { background-color: #fff9f0; }
-
-        /* --- Footer --- */
-        footer {
-            background-color: #1a1a1a;
-            color: var(--white);
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            border-top: 4px solid var(--secondary);
-            margin-top: auto;
-        }
-
-        footer p { font-size: 0.95rem; margin-bottom: 0.5rem; }
-        footer a { color: var(--secondary); text-decoration: none; }
-
-        /* --- Responsive View --- */
-        @media (max-width: 850px) {
-            .mobile-menu-btn { display: block; }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                background-color: var(--primary);
-                padding: 1.5rem;
-                box-shadow: var(--shadow);
-            }
-            nav ul.show { display: flex; }
-        }
-    </style>
 </head>
 <body>
 
@@ -205,14 +20,15 @@
                 <h1>ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</h1>
                 <p>அவல்பூந்துறை, ஈரோடு</p>
             </div>
-            <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
+            <button class="mobile-menu-btn" id="menu-btn" aria-controls="nav-links" aria-expanded="false" aria-label="Toggle menu">☰</button>
             <nav>
                 <ul id="nav-links">
                     <li><a href="index.html">முகப்பு</a></li>
                     <li><a href="history.html">வரலாறு</a></li>
                     <li><a href="timings.html" class="active">பூஜை & விசேஷங்கள்</a></li>
                     <li><a href="countries.html">24 நாடுகள்</a></li>
-                    <li><a href="gallery.html">புகைப்படங்கள்</a></li>
+                    <li><a href="admin.html">நிர்வாகம்</a></li>
+                    <li><a href="gallery.html">தரிசனம்</a></li>
                     <li><a href="contact.html">தொடர்புக்கு</a></li>
                 </ul>
             </nav>
@@ -224,7 +40,7 @@
         <div class="page-title">
             <h2>தினமும் நடைபெறும் பூஜைகள்</h2>
         </div>
-        <div class="grid-3">
+        <div class="grid-3-row">
             <div class="timing-card">
                 <h3>காலை பூஜை</h3>
                 <div class="time">06:30 AM</div>
@@ -242,82 +58,74 @@
         <!-- 2026 Special Days -->
         <div class="page-title">
             <h2>2026 பூஜை மற்றும் விசேஷ நாட்கள்</h2>
-            <p style="color: var(--text-muted); margin-top: 0.5rem;">அமாவாசை மற்றும் பௌர்ணமி திதி நேரங்கள் (இந்திய நேரம்)</p>
         </div>
 
-        <!-- 1. Amavasai Table (Full 12 Months) -->
+        <!-- 1. Amavasai Table -->
         <div class="table-container">
             <div class="table-heading">
-                <span>🌑</span> அமாவாசை நாட்கள் மற்றும் திதி நேரங்கள்
+                <span>🌑</span> அமாவாசை நாட்கள்
             </div>
             <table>
                 <thead>
                     <tr>
-                        <th>மாதம்</th>
-                        <th>அமாவாசை நாள்</th>
-                        <th>திதி தொடக்கம்</th>
-                        <th>திதி முடிவு</th>
+                        <th class="table-col-50">மாதம்</th>
+                        <th class="table-col-50">அமாவாசை நாள்</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>ஜனவரி 2026</td><td>18 ஞாயிறு</td><td>17 – 04:14 PM</td><td>18 – 06:52 PM</td></tr>
-                    <tr><td>பிப்ரவரி 2026</td><td>17 செவ்வாய்</td><td>16 – 09:22 AM</td><td>17 – 11:41 AM</td></tr>
-                    <tr><td>மார்ச் 2026</td><td>18 புதன்</td><td>17 – 11:52 PM</td><td>19 – 01:52 AM</td></tr>
-                    <tr><td>ஏப்ரல் 2026</td><td>17 வெள்ளி</td><td>16 – 12:26 PM</td><td>17 – 02:04 PM</td></tr>
-                    <tr><td>மே 2026</td><td>16 சனி</td><td>15 – 11:12 PM</td><td>17 – 12:26 AM</td></tr>
-                    <tr><td>ஜூன் 2026</td><td>15 திங்கள்</td><td>14 – 08:14 AM</td><td>15 – 09:02 AM</td></tr>
-                    <tr><td>ஜூலை 2026</td><td>14 செவ்வாய்</td><td>13 – 03:56 PM</td><td>14 – 04:16 PM</td></tr>
-                    <tr><td>ஆகஸ்ட் 2026</td><td>13 வியாழன்</td><td>12 – 10:56 PM</td><td>13 – 10:46 PM</td></tr>
-                    <tr><td>செப்டம்பர் 2026</td><td>11 வெள்ளி</td><td>11 – 06:14 AM</td><td>12 – 05:32 AM</td></tr>
-                    <tr><td>அக்டோபர் 2026</td><td>11 ஞாயிறு</td><td>10 – 03:16 PM</td><td>11 – 02:04 PM</td></tr>
-                    <tr><td>நவம்பர் 2026</td><td>09 திங்கள்</td><td>09 – 02:26 AM</td><td>10 – 12:52 AM</td></tr>
-                    <tr><td>டிசம்பர் 2026</td><td>09 புதன்</td><td>08 – 04:12 PM</td><td>09 – 02:20 PM</td></tr>
+                    <tr><td>ஜனவரி 2026</td><td>18 ஞாயிறு</td></tr>
+                    <tr><td>பிப்ரவரி 2026</td><td>17 செவ்வாய்</td></tr>
+                    <tr><td>மார்ச் 2026</td><td>18 புதன்</td></tr>
+                    <tr><td>ஏப்ரல் 2026</td><td>17 வெள்ளி</td></tr>
+                    <tr><td>மே 2026</td><td>16 சனி</td></tr>
+                    <tr><td>ஜூன் 2026</td><td>15 திங்கள்</td></tr>
+                    <tr><td>ஜூலை 2026</td><td>14 செவ்வாய்</td></tr>
+                    <tr><td>ஆகஸ்ட் 2026</td><td>13 வியாழன்</td></tr>
+                    <tr><td>செப்டம்பர் 2026</td><td>11 வெள்ளி</td></tr>
+                    <tr><td>அக்டோபர் 2026</td><td>11 ஞாயிறு</td></tr>
+                    <tr><td>நவம்பர் 2026</td><td>09 திங்கள்</td></tr>
+                    <tr><td>டிசம்பர் 2026</td><td>09 புதன்</td></tr>
                 </tbody>
             </table>
         </div>
 
-        <!-- 2. Pournami Table (Full 12 Months) -->
+        <!-- 2. Pournami Table -->
         <div class="table-container">
             <div class="table-heading">
-                <span>🌕</span> பௌர்ணமி  நாட்கள்
+                <span>🌕</span> பௌர்ணமி நாட்கள்
             </div>
             <table>
                 <thead>
                     <tr>
-                        <th>மாதம்</th>
-                        <th>தேதி</th>
-                        <th>திதி தொடக்கம்</th>
-                        <th>திதி முடிவு</th>
+                        <th class="table-col-50">மாதம்</th>
+                        <th class="table-col-50">தேதி</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>ஜனவரி 2026</td><td>03 சனி</td><td>02 – 08:56 PM</td><td>03 – 10:34 PM</td></tr>
-                    <tr><td>பிப்ரவரி 2026</td><td>02 திங்கள்</td><td>01 – 12:44 PM</td><td>02 – 02:52 PM</td></tr>
-                    <tr><td>மார்ச் 2026</td><td>03 செவ்வாய்</td><td>03 – 06:16 AM</td><td>04 – 08:26 AM</td></tr>
-                    <tr><td>ஏப்ரல் 2026</td><td>02 வியாழன்</td><td>01 – 11:52 PM</td><td>03 – 01:32 AM</td></tr>
-                    <tr><td>மே 2026</td><td>01 வெள்ளி</td><td>01 – 04:14 PM</td><td>02 – 05:12 PM</td></tr>
-                    <tr><td>ஜூன் 2026</td><td>30 செவ்வாய்</td><td>30 – 06:12 AM</td><td>01 ஜூலை – 06:22 AM</td></tr>
-                    <tr><td>ஜூலை 2026</td><td>29 புதன்</td><td>29 – 06:18 PM</td><td>30 – 05:52 PM</td></tr>
-                    <tr><td>ஆகஸ்ட் 2026</td><td>28 வெள்ளி</td><td>28 – 04:36 AM</td><td>29 – 03:34 AM</td></tr>
-                    <tr><td>செப்டம்பர் 2026</td><td>26 சனி</td><td>26 – 12:48 PM</td><td>27 – 11:16 AM</td></tr>
-                    <tr><td>அக்டோபர் 2026</td><td>26 திங்கள்</td><td>25 – 08:12 PM</td><td>26 – 06:28 PM</td></tr>
-                    <tr><td>நவம்பர் 2026</td><td>24 செவ்வாய்</td><td>24 – 04:44 AM</td><td>25 – 03:12 AM</td></tr>
-                    <tr><td>டிசம்பர் 2026</td><td>24 வியாழன்</td><td>23 – 02:16 PM</td><td>24 – 01:16 PM</td></tr>
+                    <tr><td>ஜனவரி 2026</td><td>03 சனி</td></tr>
+                    <tr><td>பிப்ரவரி 2026</td><td>02 திங்கள்</td></tr>
+                    <tr><td>மார்ச் 2026</td><td>03 செவ்வாய்</td></tr>
+                    <tr><td>ஏப்ரல் 2026</td><td>02 வியாழன்</td></tr>
+                    <tr><td>மே 2026</td><td>01 வெள்ளி</td></tr>
+                    <tr><td>ஜூன் 2026</td><td>30 செவ்வாய்</td></tr>
+                    <tr><td>ஜூலை 2026</td><td>29 புதன்</td></tr>
+                    <tr><td>ஆகஸ்ட் 2026</td><td>28 வெள்ளி</td></tr>
+                    <tr><td>செப்டம்பர் 2026</td><td>26 சனி</td></tr>
+                    <tr><td>அக்டோபர் 2026</td><td>26 திங்கள்</td></tr>
+                    <tr><td>நவம்பர் 2026</td><td>24 செவ்வாய்</td></tr>
+                    <tr><td>டிசம்பர் 2026</td><td>24 வியாழன்</td></tr>
                 </tbody>
             </table>
+            </div>
         </div>
     </main>
 
     <footer>
         <p><strong>ஸ்ரீ பெரியகாண்டி அம்மன் கோவில்</strong> - அவல்பூந்துறை, ஈரோடு</p>
-        <p>&copy; 2026 ஸ்ரீ பெரியகாண்டி அம்மன் கோவில். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
+        <p>&copy; <span id="current-year">2026</span> ஸ்ரீ பெரியகாண்டி அம்மன் கோவில். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</p>
         <p><small>Developed by <a href="https://alphainfotech.org" target="_blank" rel="noopener">alphainfotech.org</a></small></p>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById('nav-links').classList.toggle('show');
-        }
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
